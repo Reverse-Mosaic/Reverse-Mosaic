@@ -30,7 +30,7 @@ class AgentHelper:
         self.saved_model = None
         self.saved_tokenizer = None
         self.saved_embed_model = None
-        self.llm_model_name = "unsloth/codegemma-7b-bnb-4bit"
+        self.llm_model_name = "unsloth/llama-3-8b-Instruct-bnb-4bit"
         self.embedding_model_name = "BAAI/bge-small-en-v1.5"
 
     def execute_step(self, agent: AgentRunner, task):
@@ -139,7 +139,7 @@ class AgentHelper:
             tokenizer_name=self.llm_model_name,
             model_name=self.llm_model_name,
             tokenizer=tokenizer,
-            max_new_tokens=500,
+            max_new_tokens=1000,
             messages_to_prompt=messages_to_prompt,
             completion_to_prompt=completion_to_prompt,
         )
