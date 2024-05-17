@@ -48,7 +48,7 @@ function = getGlobalFunctions('<name>')
 if len(function) > 1:
     function = function[0]
 else:
-    print("No function for "<name>" found")
+    print("No function for <name> found")
     exit()
 
 # decompile the function and print the pseudo C
