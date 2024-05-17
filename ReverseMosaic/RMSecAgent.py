@@ -198,6 +198,7 @@ class RMSecAgent:
 
         agent = ReActAgent.from_tools(
             tools,
+            max_iterations= 50,
             llm=self.agent_help.get_llm(),
             verbose=is_verbose,
             context="You are Reverse Mosaic, a binary analysis expert. It is your job to review, decompile, and analyse binary files alongside answering reverse engineering, vulnerability research, and malware analysis based questions."
