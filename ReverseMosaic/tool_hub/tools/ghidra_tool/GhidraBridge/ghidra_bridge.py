@@ -45,15 +45,14 @@ ifc.openProgram(program)
 # here we assume there is only one function named `main`
 function = getGlobalFunctions('<name>')
 
-if len(function) > 1:
+try:
     function = function[0]
-else:
-    print("No function for <name> found")
-    exit()
 
-# decompile the function and print the pseudo C
-results = ifc.decompileFunction(function, 0, ConsoleTaskMonitor())
-print(results.getDecompiledFunction().getC())""".replace("<name>", function_name)
+    # decompile the function and print the pseudo C
+    results = ifc.decompileFunction(function, 0, ConsoleTaskMonitor())
+    print(results.getDecompiledFunction().getC())
+except:
+    print("No function for <name> found")""".replace("<name>", function_name)
         
         return script
 
